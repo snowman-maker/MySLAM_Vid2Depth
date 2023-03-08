@@ -42,6 +42,7 @@ import model
 import numpy as np
 import tensorflow as tf
 import util
+import config.configer
 
 gfile = tf.io.gfile
 
@@ -60,7 +61,7 @@ Legacy_mode = False
 
 
 HOME_DIR = os.path.expanduser('./')
-DEFAULT_DATA_DIR = os.path.join(HOME_DIR, 'kitti_raw_eigen')
+DEFAULT_DATA_DIR = os.path.join(HOME_DIR, 'data/kitti_raw_eigen')
 DEFAULT_CHECKPOINT_DIR = os.path.join(HOME_DIR, 'checkpoints')
 
 flags.DEFINE_string('data_dir', DEFAULT_DATA_DIR, 'Preprocessed data.')
@@ -81,7 +82,7 @@ flags.DEFINE_string('checkpoint_dir', DEFAULT_CHECKPOINT_DIR,
                     'Directory to save model checkpoints.')
 flags.DEFINE_integer('train_steps', 200000, 'Number of training steps.')
 flags.DEFINE_integer('summary_freq', 100, 'Save summaries every N steps.')
-flags.DEFINE_bool('legacy_mode', False, 'Whether to limit losses to using only '
+flags.DEFINE_bool('legacy_mode', False, 'Whether to limit losses to using only'
                   'the middle frame in sequence as the target frame.')
 FLAGS = flags.FLAGS
 

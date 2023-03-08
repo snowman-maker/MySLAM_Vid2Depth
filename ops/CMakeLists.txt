@@ -9,8 +9,8 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-include_directories(/home/toodef/anaconda3/envs/vid2depth/lib/python3.6/site-packages/tensorflow/include)
-link_directories(/home/toodef/anaconda3/envs/vid2depth/lib/python3.6/site-packages/tensorflow)
+include_directories(/home/casia/Robcutt/DRL-tensorflow-env/DRL-tensorflow/lib/python3.6/site-packages/tensorflow/include)
+link_directories(/home/casia/Robcutt/DRL-tensorflow-env/DRL-tensorflow/lib/python3.6/site-packages/tensorflow)
 
 include_directories("${EIGEN3_INCLUDE_DIR}")
 

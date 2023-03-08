@@ -1,0 +1,53 @@
+#dataset:
+#  kitti
+#  cityscapes
+#  bike
+#
+#dataset_name:
+#  kitti_raw_eigen
+#  kitti_raw_stereo
+#  kitti_odom
+#  cityscapes
+#  bike
+#
+#dataset_dir:
+#  kitti: ./kitti-raw-uncompressed
+#  cityscapes: ./cityscapes-uncompressed
+#  bike: ./bike-uncompressed
+#
+#data_dir:
+#  kitti_raw_eigen: ./data/kitti_raw_eigen
+#  kitti_raw_stereo: ./data/kitti_raw_stereo
+#  kitti_odom: ./data/kitti_odom
+#  cityscapes: ./data/cityscapes
+#  bike: ./data/bike
+
+inference:
+  kitti_dir: ./kitti-raw-uncompressed
+  output_dir: ./inference/output
+  kitti_video: 2011_09_26/2011_09_26_drive_0009_sync
+  model_ckpt: ./trained-model/model-119496
+  batch_size: 4
+  img_height: 128
+  img_width: 416
+  seq_length: 3
+
+train:
+  data_dir: ~/vid2depth/data/kitti_raw_eigen 
+  seq_length: 3 
+  reconstr_weight: 0.85 
+  smooth_weight: 0.05 
+  ssim_weight: 0.15 
+  icp_weight: 0 
+  checkpoint_dir: ~/vid2depth/checkpoints
+
+gen_data:
+  dataset_name: kitti_raw_eigen
+  dataset_dir: ../kitti-raw-uncompressed
+  data_dir: ../data/kitti_raw_eigen
+  static_frames_file: ../dataset/kitti/static_frames.txt
+  test_scene_file: ../dataset/kitti/test_scenes_eigen.txt
+  seq_length: 3
+  img_height: 128
+  img_width: 416
+  num_threads: 8
