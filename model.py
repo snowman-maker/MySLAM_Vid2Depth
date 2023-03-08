@@ -212,7 +212,7 @@ class Model(object):
                         if self.ssim_weight > 0:
                             self.ssim_error[s][key] = self.ssim(self.warped_image[s][key],
                                                                 target)
-                            
+
                             ssim_mask = slim.avg_pool2d(self.warp_mask[s][key], 3, 1, 'VALID')
                             self.ssim_loss += tf.reduce_mean(
                                 input_tensor=self.ssim_error[s][key] * ssim_mask)

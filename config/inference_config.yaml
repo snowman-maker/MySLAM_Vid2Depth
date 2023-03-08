@@ -1,0 +1,9 @@
+inference:
+  kitti_dir: ../kitti-raw-uncompressed
+  output_dir: ../inference/output
+  kitti_video: 2011_09_26/2011_09_26_drive_0009_sync
+  model_ckpt: ../trained-model/model-119496
+  batch_size: 4
+  img_height: 128
+  img_width: 416
+  seq_length: 3
